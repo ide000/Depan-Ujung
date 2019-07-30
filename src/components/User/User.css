@@ -1,0 +1,76 @@
+button {
+    margin-left: 40px;
+}
+
+table {
+    max-width: 90rem;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+thead {
+    background-color: #1BAEC9;
+    color: #FFFFFF;
+    font-family: helvetica;
+}
+
+tbody {
+    background-color: #f1f8fc;
+}
+
+.button-apps {
+    display: flex;
+    margin: auto;
+}
+
+.aksi {
+    min-width: 3rem;
+}
+
+.text {
+    text-align: left;
+}
+
+.edit {
+    background-color: #1BAEC9;
+    border: #1BAEC9;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+}
+
+.delete {
+    background-color: #C64343;
+    border: #C64343;
+    height: 2.5rem;
+    width: 4rem;
+    border-radius: 0.5rem;
+    margin-right: -9.5rem;
+}
+
+.tambah {
+    background-color: #1AAD2B;
+    border: #1AAD2B;
+    height: 2px;
+    border-radius: 0.5rem;
+}
+
+.edit,
+.delete,
+.tambah {
+    color: #FFFFFF;
+    text-align: center;
+    opacity: 100%;
+}
+
+.tambahUser {
+    margin-right: 80px;
+    text-align: -webkit-right;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    margin-left: 50%;
+
+
+}

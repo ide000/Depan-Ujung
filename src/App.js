@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import {BrowserRouter, Route} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import SignIn from './components/SignIn/SignIn';
+import SignUp from './components/SignUp/SignUp';
+import Dashboard from './components/Dashboard/Dashboard';
+import Pertanyaan from './components/Pertanyaan/Pertanyaan';
+import User from './components/User/User';
+import TambahSoal from './components/Pertanyaan/TambahSoal/TambahSoal';
+import TambahUser from './components/User/TambahUser/TambahUser';
+import Sidebar from './components/Sidebar/Sidebar';
+
+class App extends Component {
+  render () {
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <Route path="/" exact component={SignUp} />
+          <Route path="/Dashboard" component={Dashboard} />
+          <Route path="/SignIn" component={SignIn} />
+          <Route path="/Pertanyaan" component={Pertanyaan} />
+          <Route path="/User" component={User} />
+          <Route path="/TambahSoal" component={TambahSoal} />
+          <Route path="/TambahUser" component={TambahUser} />
+          <Route path="/Sidebar" component={Sidebar} />
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;

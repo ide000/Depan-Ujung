@@ -1,0 +1,93 @@
+table {
+  max-width: 90rem;
+  margin: auto;
+  margin-top: 3rem;
+}
+
+thead {
+  background-color: #1BAEC9;
+  color: #FFFFFF;
+  font-family: helvetica;
+}
+
+tbody {
+  background-color: #f1f8fc;
+}
+
+.button-app {
+  display: flex;
+  margin: auto;
+}
+
+.aksi {
+  min-width: 3rem;
+
+}
+
+.text {
+  text-align: left;
+}
+
+.edit {
+  background-color: #1BAEC9;
+  border: #1BAEC9;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+}
+
+.hapus {
+  background-color: #C64343;
+  border: #C64343;
+  height: 2.5rem;
+  width: 4rem;
+  border-radius: 0.5rem;
+  margin-right: -7rem;
+}
+
+.tambah {
+  background-color: #1AAD2B;
+  border: #1AAD2B;
+  height: 2px;
+  border-radius: 0.5rem;
+}
+
+.edit,
+.hapus,
+.tambah {
+  color: #FFFFFF;
+  text-align: center;
+  opacity: 100%;
+}
+
+.tambahSoal {
+  margin-right: 80px;
+  text-align: -webkit-right;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  margin-left: 50%;
+
+
+}
+
+/* .pagination {
+  margin-top: 25px;
+}
+
+.pagination span {
+  cursor: pointer;
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: 3s;
+  border: 1px solid #ddd;
+}
+
+.pagination span.active {
+  background-color: #0099FF;
+  color: white;
+  border: 1px solid #0099FF;
+} */

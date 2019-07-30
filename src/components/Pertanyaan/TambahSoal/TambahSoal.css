@@ -1,0 +1,70 @@
+.tambah-pertanyaan-app {
+  background-color: #1AAD2B;
+  color: #ffffff;
+  width: 8rem;
+  height: 2.5rem;
+  font-weight: 500;
+  border: none;
+  margin-top: 20rem;
+  margin-left: 80%;
+
+}
+
+.form-modals {
+  text-align: left;
+  height: 20rem;
+  width: 30rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  flex-direction: column;
+}
+
+.form-modals p {
+  font-weight: bold;
+}
+
+.form-modals h3 {
+  color: #005083;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 1.5rem;
+}
+
+.form-modals #pertanyaan {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-modals button {
+  width: 7rem;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  height: 2rem;
+  margin-top: 3rem;
+}
+
+#radio-1,
+#radio-2 {
+  margin-right: 1rem;
+}
+
+#input1,
+#input2 {
+  border: none;
+  font-style: italic;
+
+}
+
+.tambah-pertanyaan {
+  margin-top: 1rem;
+}
+
+.button-batal {
+  margin-left: 13rem;
+}
+
+.button-simpan {
+  background-color: #1AAD2B;
+  color: #ffffff;
+}
