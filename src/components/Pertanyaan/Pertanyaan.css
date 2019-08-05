@@ -4,7 +4,6 @@
 
 table {
   width: 75%;
-
 }
 
 thead {
@@ -43,7 +42,7 @@ tbody {
 
 .btn-secondary:hover {
   color: #FFFFFF;
-  background-color: #1CAAC5;
+  background-color: #FFFFFF;
   border: none;
 }
 
@@ -51,15 +50,9 @@ tbody {
   background-color: #1CAAC5;
 }
 
-/* #question-wrap {
-  transform: translate3d(150px, 0px, 0px) !important;
-  transition: all 0.5s ease 0s;
+.dropdown :hover {
+  background-color: #1CAAC5;
 }
-
-.react-bs-table-container {
-  transform: translate3d(-100px, 0px, 0px) !important;
-  transition: all 0.5s ease 0s;
-} */
 
 .btn-secondary:not(:disabled):not(.disabled).active,
 .btn-secondary:not(:disabled):not(.disabled):active,
@@ -68,6 +61,12 @@ tbody {
   background-color: #1CAAC5;
   border-color: #1BAEC9;
   border: none;
+}
+
+#bm-tabel-app {
+  transform: translate3d(150px, 0px, 0px) !important;
+  background-color: #1AAD2B;
+  margin: 100px !important;
 }
 
 .edit,
@@ -87,3 +86,10 @@ tbody {
   margin-top: 15rem;
   margin-left: 73rem;
 }
+
+/* 
+#question-wrap {
+  transform: translate3d(300px, 0px, 0px);
+  transition: all 0.5s ease 0s;
+  margin-right: 18rem;
+} */

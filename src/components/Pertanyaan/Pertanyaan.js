@@ -5,15 +5,12 @@ import Sidebar from '../Sidebar/Sidebar';
 import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import {transform} from '@babel/core';
 
 class Pertanyaan extends Component {
   constructor (props) {
     super (props);
     this.sweetalertfunction = this.sweetalertfunction.bind (this);
-    this.state = {
-      isOpen: this.props.isOpen,
-    };
+    this.isOpen = this.props.isOpen;
   }
 
   getData () {
@@ -61,7 +58,6 @@ class Pertanyaan extends Component {
     ];
     return data;
   }
-
   sweetalertfunction () {
     console.log ('button clicks');
     Swal.fire ({
@@ -118,21 +114,20 @@ class Pertanyaan extends Component {
       <div className="pertanyaan-app">
         <div className="call-navbar">
           <Navbar />
-          <Sidebar
+          <Sidebar pageWrapId={'question-wrap'} outerContainerId={'App'} />
+        </div>
+        <div id="question-wrap">
+          <div
+            className="tabel-app"
             style={
-              this.state.isOpen === true
+              this.props.isOpen === true
                 ? {
                     transform: 'translate3d(150px,0px,0px !important',
                     transition: 'all 0.5 ease !important',
                   }
                 : {marginLeft: 'auto'}
             }
-            pageWrapId={'question-wrap'}
-            outerContainerId={'App'}
-          />
-        </div>
-        <div id="question-wrap">
-          <div className="tabel-app">
+          >
             <BootstrapTable
               data={this.getData ()}
               pagination={true}
