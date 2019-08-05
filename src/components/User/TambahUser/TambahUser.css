@@ -1,33 +1,32 @@
-.tambah-user-app {
-    background-color: #1AAD2B;
-    color: #ffffff;
-    width: 8rem;
-    height: 2.5rem;
-    font-weight: 500;
-    border: none;
-    margin-top: 20rem;
-    margin-left: 80%;
-}
-
-.form-modals-user {
-    height: 30rem;
-    width: 20rem;
+.form-user {
+    height: 40rem;
+    width: 30rem;
     text-align: left;
-    margin: 2rem;
+    margin: auto;
+    margin-top: 4rem;
+    background: #ffffff;
+    box-shadow: 3px 3px 2px #dde0e2;
+    border: 1px solid #dde0e2;
 }
 
-.form-modals-user h3 {
+.form-user-app {
+    margin: auto;
+    width: 90%;
+    margin-top: 3rem;
+}
+
+.form-user h1 {
     color: #005083;
     font-weight: bold;
 }
 
-.form-modals-user input {
+.form-user input {
     font-style: italic;
     width: 100%;
     margin-top: -1rem;
 }
 
-.form-modals-user label {
+.form-user label {
     font-weight: bold;
     margin-top: 0.5rem;
 }
@@ -36,9 +35,17 @@
     background-color: #1AAD2B;
     color: #ffffff;
     width: 7rem;
-    height: 2rem;
+    height: 2.5rem;
     text-align: center;
     border: none;
-    margin-top: 3rem;
-    margin-left: 13rem;
+    margin-top: 5rem;
+    margin-left: 19rem;
+}
+
+input[type=text],
+[type=email],
+[type=nip],
+[type=noTelp],
+[type=password] {
+    padding: 5px;
 }

@@ -1,7 +1,10 @@
-table {
-  max-width: 90rem;
+.button-app {
   margin: auto;
-  margin-top: 3rem;
+}
+
+table {
+  width: 75%;
+
 }
 
 thead {
@@ -12,20 +15,6 @@ thead {
 
 tbody {
   background-color: #f1f8fc;
-}
-
-.button-app {
-  display: flex;
-  margin: auto;
-}
-
-.aksi {
-  min-width: 3rem;
-
-}
-
-.text {
-  text-align: left;
 }
 
 .edit {
@@ -44,50 +33,57 @@ tbody {
   margin-right: -7rem;
 }
 
-.tambah {
-  background-color: #1AAD2B;
-  border: #1AAD2B;
-  height: 2px;
-  border-radius: 0.5rem;
+.dropdown-item {
+  background-color: #1BAEC9;
+}
+
+.btn-secondary {
+  background-color: #1CAAC5;
+}
+
+.btn-secondary:hover {
+  color: #FFFFFF;
+  background-color: #1CAAC5;
+  border: none;
+}
+
+.dropdown .react-bs-table-sizePerPage-dropdown {
+  background-color: #1CAAC5;
+}
+
+/* #question-wrap {
+  transform: translate3d(150px, 0px, 0px) !important;
+  transition: all 0.5s ease 0s;
+}
+
+.react-bs-table-container {
+  transform: translate3d(-100px, 0px, 0px) !important;
+  transition: all 0.5s ease 0s;
+} */
+
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+  color: #FFFFFF;
+  background-color: #1CAAC5;
+  border-color: #1BAEC9;
+  border: none;
 }
 
 .edit,
-.hapus,
-.tambah {
+.hapus {
   color: #FFFFFF;
   text-align: center;
   opacity: 100%;
 }
 
-.tambahSoal {
-  margin-right: 80px;
+.TambahSoal {
   text-align: -webkit-right;
+  background: #1AAD2B;
+  color: #FFFFFF;
+  border: #1AAD2B;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  margin-top: 15rem;
+  margin-left: 73rem;
 }
-
-.pagination {
-  display: flex;
-  list-style: none;
-  margin-left: 50%;
-
-
-}
-
-/* .pagination {
-  margin-top: 25px;
-}
-
-.pagination span {
-  cursor: pointer;
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: 3s;
-  border: 1px solid #ddd;
-}
-
-.pagination span.active {
-  background-color: #0099FF;
-  color: white;
-  border: 1px solid #0099FF;
-} */

@@ -1,64 +1,85 @@
 import React, {Component} from 'react';
 import './TambahSoal.css';
-import Modal from 'react-awesome-modal';
+import {Link} from 'react-router-dom';
 
 class TambahSoal extends Component {
-  constructor (props) {
-    super (props);
+  constructor () {
+    super ();
     this.state = {
-      visible: false,
+      question: '',
+      options: [{question: ''}],
     };
   }
-
-  openModal () {
-    this.setState ({
-      visible: true,
+  handleAddOptionsQuestion = idx => evt => {
+    const newOptions = this.state.options.map ((option, sidx) => {
+      if (idx !== sidx) return option;
+      return {...option, question: evt.target.value};
     });
-  }
 
-  closeModal () {
+    this.setState ({options: newOptions});
+  };
+  handleAddOptions = () => {
     this.setState ({
-      visible: false,
+      options: this.state.options.concat ([{question: ''}]),
     });
-  }
+  };
+  handleRemoveOptions = idx => () => {
+    this.setState ({
+      options: this.state.options.filter ((s, sidx) => idx !== sidx),
+    });
+  };
+
   render () {
     return (
-      <section>
-        <button
-          className="tambah-pertanyaan-app"
-          onClick={() => this.openModal ()}
-        >
-          + Tambah
-        </button>
-        <Modal
-          visible={this.state.visible}
-          onClickAway={() => this.closeModal ()}
-        >
-          <div className="form-modals">
-            <h3>Pertanyaan</h3>
-            <p>Soal</p>
-            <input id="pertanyaan" type="text" placeholder="Tulis Pertanyaan" />
-            <br />
-            <div className="pilihan">
-              <input type="radio" id="radio-1" name="radio" />
-              <input id="input1" type="text" placeholder="Pilihan 1" />
+      <div className="form-question">
+        <div className="question-app">
+          <h1>Pertanyaan</h1>
+          <p>Soal</p>
+          <input id="question" type="text" placeholder="Tulis Pertanyaan" />
+          <br />
+
+          {this.state.options.map ((option, idx) => (
+            <div className="option">
+              <input
+                type="text"
+                placeholder={`Pilihan ${idx + 1}`}
+                value={option.question}
+                onChange={this.handleAddOptionsQuestion (idx)}
+              />
+              <button
+                type="button"
+                onClick={this.handleRemoveOptions (idx)}
+                className="small"
+              >
+                x
+              </button>
             </div>
-            <div className="tambah-pertanyaan">
-              <input type="radio" id="radio-2" name="radio" />
-              <input id="input2" type="text" placeholder="Tambah Pertanyaan" />
-            </div>
-            <button className="button-batal" onClick={() => this.closeModal ()}>
-              Batal
-            </button>
+          ))}
+
+          <div className="options">
             <button
-              className="button-simpan"
-              onClick={() => this.closeModal ()}
+              type="button"
+              onClick={this.handleAddOptions}
+              className="small"
             >
-              Simpan
+              Tambah Pilihan
             </button>
           </div>
-        </Modal>
-      </section>
+
+          <div className="submit">
+            <Link to="/Pertanyaan">
+              <button className="button-batal">
+                Batal
+              </button>
+            </Link>
+            <Link to="/Pertanyaan">
+              <button className="button-simpan">
+                Simpan
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
     );
   }
 }

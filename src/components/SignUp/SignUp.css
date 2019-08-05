@@ -21,6 +21,10 @@
     margin: auto;
 }
 
+.sign-up {
+    margin-left: 2rem;
+}
+
 .title {
     font-weight: bold;
     margin-left: 4.25rem;
@@ -52,7 +56,7 @@
 
 .button-regis {
     margin-top: 5rem;
-    margin-left: 4.25rem;
+    margin-left: -1.5rem;
     width: 15.6rem;
     height: 3rem;
     border: none;
@@ -64,7 +68,15 @@
 
 .login p {
     color: #ffffff;
-    margin-left: 4.25rem;
+    margin-left: -8rem;
     font-size: 0.75rem;
+    margin-top: 0.75rem;
 
+}
+
+input[type=email],
+[type=password],
+[type=email],
+[type=username] {
+    padding: 6px;
 }

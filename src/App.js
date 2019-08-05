@@ -4,11 +4,14 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
+import Navbar from './components/Navbar/Navbar';
 import Dashboard from './components/Dashboard/Dashboard';
 import Pertanyaan from './components/Pertanyaan/Pertanyaan';
 import User from './components/User/User';
 import TambahSoal from './components/Pertanyaan/TambahSoal/TambahSoal';
 import TambahUser from './components/User/TambahUser/TambahUser';
+import EditSoal from './components/Pertanyaan/EditSoal/EditSoal';
+import EditUser from './components/User/EditUser/EditUser';
 import Sidebar from './components/Sidebar/Sidebar';
 
 class App extends Component {
@@ -23,6 +26,9 @@ class App extends Component {
           <Route path="/User" component={User} />
           <Route path="/TambahSoal" component={TambahSoal} />
           <Route path="/TambahUser" component={TambahUser} />
+          <Route path="/Navbar" component={Navbar} />
+          <Route path="/EditSoal" component={EditSoal} />
+          <Route path="/EditUser" component={EditUser} />
           <Route path="/Sidebar" component={Sidebar} />
         </BrowserRouter>
       </div>

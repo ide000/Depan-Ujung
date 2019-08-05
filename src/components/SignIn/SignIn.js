@@ -11,7 +11,7 @@ const SignIn = () => {
     validate
   );
   function login () {
-    console.log ('No errors, submit callback called!');
+    console.log (values);
   }
 
   return (
@@ -61,14 +61,14 @@ const SignIn = () => {
               <p>Lupa kata sandi ?</p>
             </div>
             <div className="login">
-              {/* <Link to="/Dashboard"> */}
-              <button
-                type="submit"
-                className="button is-block is-info is-fullwidth"
-              >
-                Login
-              </button>
-              {/* </Link> */}
+              <Link to="/Dashboard">
+                <button
+                  type="submit"
+                  className="button is-block is-info is-fullwidth"
+                >
+                  Login
+                </button>
+              </Link>
             </div>
             <div className="regis">
               <Link to="/">

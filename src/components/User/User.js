@@ -1,16 +1,64 @@
 import React, {Component} from 'react';
 import './User.css';
-import {Table, Pagination, PaginationItem, PaginationLink} from 'reactstrap';
 import Navbar from '../Navbar/Navbar';
-import TambahUser from './TambahUser/TambahUser';
-import EditUser from './EditUser/EditUser';
+import Sidebar from '../Sidebar/Sidebar';
 import Swal from 'sweetalert2';
+import {Link} from 'react-router-dom';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 class User extends Component {
   constructor (props) {
     super (props);
     this.sweetalertfunction = this.sweetalertfunction.bind (this);
   }
+  getData () {
+    var data = [
+      {
+        id: 1,
+        name: 'Alim Agus Musalim',
+        nip: '09239838484774',
+        action: [
+          <div className="button1">
+            <div id="edit">
+              <Link to="/EditUser">
+                Edit
+              </Link>
+            </div>
+          </div>,
+          <div className="button1">
+            <div id="edit">
+              <Link to="/EditUser">
+                Edit
+              </Link>
+            </div>
+          </div>,
+        ],
+      },
+      {
+        id: 2,
+        name: 'Muhammad Bambang',
+        nip: '38737486782883',
+        action: [
+          <div className="button1">
+            <div id="edit">
+              <Link to="/EditUser">
+                Edit
+              </Link>
+            </div>
+          </div>,
+          <div className="button1">
+            <div id="edit">
+              <Link to="/EditUser">
+                Edit
+              </Link>
+            </div>
+          </div>,
+        ],
+      },
+    ];
+    return data;
+  }
+
   sweetalertfunction () {
     console.log ('button clicks');
     Swal.fire ({
@@ -28,65 +76,94 @@ class User extends Component {
     });
   }
   render () {
-    return (
-      <div className="user-app">
-        <div>
-          <Navbar />
-        </div>
-        <Table bordered>
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Nama</th>
-              <th>NIP</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Muhammad Bambang</td>
-              <td>38737486782883</td>
-              <td className="button-apps">
-                <EditUser />
-                <button className="delete" onClick={this.sweetalertfunction}>
-                  Hapus
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Alim Agus Musalim</td>
-              <td>09239838484774</td>
-              <td className="button-apps">
-                <EditUser />
-                <button className="delete" onClick={this.sweetalertfunction}>
-                  Hapus
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </Table>
-        <Pagination aria-label="Page navigation example">
-          <PaginationItem>
-            <PaginationLink first href="#" />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink previous href="#" />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">1</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">2</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">3</PaginationLink>
-          </PaginationItem>
-        </Pagination>
+    const customTotal = (from, to, size) => (
+      <span className="react-bootstrap-table-pagination-total">
+        Showing {from} to {to} of {size} Results
+      </span>
+    );
 
-        <div className="tambahUser">
-          <TambahUser />
+    const options = {
+      paginationSize: 4,
+      pageStartIndex: 1,
+      firstPageText: 'First',
+      prePageText: 'Back',
+      nextPageText: 'Next',
+      lastPageText: 'Last',
+      nextPageTitle: 'First page',
+      prePageTitle: 'Pre page',
+      firstPageTitle: 'Next page',
+      lastPageTitle: 'Last page',
+      showTotal: true,
+      paginationTotalRenderer: customTotal,
+      sizePerPageList: [
+        {
+          text: '5',
+          value: 5,
+        },
+        {
+          text: '10',
+          value: 10,
+        },
+        {
+          text: '20',
+          value: 20,
+        },
+      ],
+    };
+
+    return (
+      <div className="pertanyaan-app">
+        <div className="call-navbar">
+          <Navbar />
+          <Sidebar pageWrapId={'question-wrap'} outerContainerId={'App'} />
+        </div>
+        <div id="question-wrap">
+          <div className="tabel-app">
+            <BootstrapTable
+              data={this.getData ()}
+              pagination={true}
+              options={options}
+            >
+              <TableHeaderColumn
+                isKey
+                dataField="id"
+                dataAlign="center"
+                headerAlign="center"
+                width="3rem"
+              >
+                No
+              </TableHeaderColumn>
+              <TableHeaderColumn
+                dataField="name"
+                dataAlign="center"
+                headerAlign="center"
+                width="20rem"
+              >
+                Nama
+              </TableHeaderColumn>
+              <TableHeaderColumn
+                dataField="nip"
+                dataAlign="center"
+                headerAlign="center"
+                width="20rem"
+              >
+                NIP
+              </TableHeaderColumn>
+              <TableHeaderColumn
+                dataField="action"
+                ataAlign="center"
+                headerAlign="center"
+                width="10rem"
+              >
+                Aksi
+              </TableHeaderColumn>
+            </BootstrapTable>
+            <div className="tambahUser">
+              <Link to="/TambahUser">
+                <button className="TambahSoal">+ Tambah</button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     );

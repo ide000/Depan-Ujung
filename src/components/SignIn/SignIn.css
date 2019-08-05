@@ -83,4 +83,10 @@
     color: #ffffff;
     margin-left: -0.25rem;
     font-size: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+input[type=email],
+[type=password] {
+    padding: 6px;
 }

@@ -13,16 +13,16 @@ const SignUp = () => {
         </div>
         <div className="form-group-regis">
           <FormGroup className="username">
-            <input type="username" placeholder="  Nama Lengkap" />
+            <input type="username" placeholder="Nama Lengkap" />
           </FormGroup>
           <FormGroup className="email">
-            <input type="email" placeholder="  Alamat Email" />
+            <input type="email" placeholder="Alamat Email" />
           </FormGroup>
           <FormGroup className="password">
-            <input type="password" placeholder="  Password" />
+            <input type="password" placeholder="Password" />
           </FormGroup>
         </div>
-        <div className="text">
+        <div className="sign-up">
           <div className="regis">
             <Link to="/Dashboard">
               <button className="button-regis">Sign Up</button>

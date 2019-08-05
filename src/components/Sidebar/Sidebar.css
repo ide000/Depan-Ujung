@@ -1,5 +1,4 @@
-/* title-sidebar */
-.title-sidebar {
+title-sidebar .title-sidebar {
     font-size: 2.5rem;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
@@ -18,17 +17,38 @@
     margin-right: 1rem;
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
+    margin-top: 4rem;
     color: #ffffff;
     background-color: #1CAAC5;
+}
+
+a:link,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+.list ul {
+    font-size: 0.77rem;
+    list-style: none;
+    text-align: left;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+.list li {
+    margin-left: 2rem;
 }
 
 .log-out {
     margin-top: 3rem;
     font-family: Arial, Helvetica, sans-serif;
     list-style: none;
-    margin-top: 12rem;
+    margin-top: 5rem;
     color: #ffffff;
+    font-size: 1rem;
 }
 
 /* Position and sizing of burger button */
@@ -51,10 +71,11 @@
     background: #ffffff;
 }
 
-/* Position and sizing of clickable cross button */
+/* Position, color and sizing of clickable cross button */
 .bm-cross-button {
     height: 24px;
     width: 24px;
+    margin-top: -5rem;
 }
 
 /* Color/shape of close button cross */
@@ -63,12 +84,13 @@
 }
 
 /*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
+    Sidebar wrapper styles
+    Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+    */
 .bm-menu-wrap {
     position: fixed;
     height: 100%;
+    width: 19rem !important;
 }
 
 /* General sidebar styles */
@@ -76,6 +98,7 @@
     background: #1CAAC5;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
+    margin-top: -5.75rem;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -85,7 +108,7 @@
 
 /* Wrapper for item list */
 .bm-item-list {
-    color: #b8b7ad;
+    /* color: #b8b7ad; */
     padding: 0.8em;
     background-color: #1CAAC5;
 }
@@ -97,12 +120,24 @@
 
 /* Styling of overlay */
 .bm-overlay {
-    /* background: #1CAAC5; */
+    position: relative !important;
+    display: grid !important;
+    z-index: 1 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: none !important;
+    opacity: 0 !important;
+    transition: none !important;
+    margin-left: 0rem !important;
+
 }
 
-/* 
-git init 
-git add . 
-git commit -m "first commit" 
-git remote add origin https://github.com/aisy/js-belajar-react.git 
-git push -u origin master */
+.title-sidebar {
+    font-size: 2.5rem;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding-left: 0.5rem;
+    color: #ffffff;
+
+}
