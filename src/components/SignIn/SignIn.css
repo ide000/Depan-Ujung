@@ -21,54 +21,28 @@
     margin: auto;
 }
 
-.username {
-    margin-bottom: 1rem;
-}
-
-.password p,
-.username p {
-    margin-top: 0.5rem;
-    color: #0e0d0d;
-}
-
-.title {
-    font-weight: bold;
-    margin-left: 4.25rem;
-    padding-top: 7rem;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: left;
-    color: #ffffff;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+.title #first {
+    margin-bottom: -0.5rem;
 }
 
 .form-group-login {
-    margin-top: 3rem;
-    text-align: left;
-    margin-left: 5rem;
-}
-
-.form-group-login input {
     width: 15.5rem;
-    height: 3rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    color: #0C3265;
-    margin-bottom: -1rem;
-    margin-left: -0.5rem;
+    margin: auto;
+    margin-top: 5.5rem;
 }
 
-.lupa-sandi {
-    color: #ffffff;
-    margin-left: 9rem;
-    margin-top: 0.75rem;
-    font-size: 0.75rem;
+#email.form-control,
+#password.form-control {
+    height: 3rem;
+}
 
+
+#password.form-control {
+    margin-top: 0.25rem;
 }
 
 .login button {
-    margin-top: 5rem;
+    margin-top: 5.5rem;
     margin-left: -0.25rem;
     width: 15.6rem;
     height: 3rem;
@@ -79,14 +53,30 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.regis p {
+.btn-primary:hover {
+    color: #ffffff !important;
+    background-color: #1BAEC9 !important;
+    border: none !important;
+}
+
+.to-regis p {
     color: #ffffff;
-    margin-left: -0.25rem;
+    margin-left: -5.5rem;
     font-size: 0.75rem;
     margin-top: 0.75rem;
 }
 
-input[type=email],
-[type=password] {
-    padding: 6px;
+.forget-password p {
+    color: #ffffff;
+    margin-left: 9rem;
+    margin-top: -0.10rem;
+    font-size: 0.75rem;
+}
+
+input[type=fullName],
+[type=email],
+[id=password] {
+    padding: 4px 12px;
+    margin: 0px 0px 4px;
+    font-size: 1rem;
 }

@@ -8,10 +8,10 @@ import Navbar from './components/Navbar/Navbar';
 import Dashboard from './components/Dashboard/Dashboard';
 import Pertanyaan from './components/Pertanyaan/Pertanyaan';
 import User from './components/User/User';
-import TambahSoal from './components/Pertanyaan/TambahSoal/TambahSoal';
-import TambahUser from './components/User/TambahUser/TambahUser';
-import EditSoal from './components/Pertanyaan/EditSoal/EditSoal';
-import EditUser from './components/User/EditUser/EditUser';
+import TambahSoal from './components/TambahSoal/TambahSoal';
+import TambahUser from './components/TambahUser/TambahUser';
+import EditSoal from './components/EditSoal/EditSoal';
+import EditUser from './components/EditUser/EditUser';
 import Sidebar from './components/Sidebar/Sidebar';
 
 class App extends Component {

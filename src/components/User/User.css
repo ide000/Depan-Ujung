@@ -1,20 +1,14 @@
-/* #page-wrap {
-    transform: translate3d(10rem, 0px, 0px) !important;
-    transition: all 0.5s ease 0s !important;
-} */
-
-
-/* .table-header-wrapper {
-    margin-bottom: -3rem;
-} */
-
 .table {
-    width: 80%;
+    width: 75%;
     margin-bottom: 1rem;
     color: #212529;
     border-collapse: collapse;
     margin: auto;
     margin-top: 3rem;
+}
+
+table {
+    width: 75%;
 }
 
 thead {
@@ -31,42 +25,51 @@ tbody {
     margin: auto;
 }
 
-.table td,
-.table th {
-    border-left: 1px solid #dee2e6;
+bootstrapbutton {
+    padding: 0.60rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFFFFF;
+    border-radius: 0.25rem !important;
+    text-align: center;
+    margin: auto;
+    margin-right: -2rem;
 }
 
-.row .col-md-5 {
-    padding-left: 20rem;
-}
-
-.react-bs-container-body {
-    margin-top: -3rem;
-}
-
-#edit {
+#edit2 {
     background-color: #1BAEC9;
     border: #1BAEC9;
     height: 2.5rem;
     border-radius: 0.5rem;
     width: 4rem;
-    margin-right: 2rem;
+    margin: auto;
+    margin-left: 1rem;
+    color: #FFFFFF;
+
 }
 
-#delete {
+#delete2 {
     background-color: #C64343;
     border: #C64343;
     height: 2.5rem;
     width: 4rem;
+    margin: auto;
     border-radius: 0.5rem;
-
+    margin-left: 0.5rem;
+    color: #FFFFFF;
 }
 
-#edit,
-#delete {
-    color: #FFFFFF;
-    text-align: center;
-    opacity: 100%;
+
+.table td,
+.table th {
+    border-left: 1px solid #dee2e6;
+}
+
+/* 
+.row .col-md-5 {
+    padding-left: 20rem;
+} */
+.react-bs-container-body {
+    margin-top: -3rem;
 }
 
 a {
@@ -83,5 +86,4 @@ a {
     border-radius: 0.5rem;
     margin-top: 15rem;
     margin-left: 50rem;
-
 }

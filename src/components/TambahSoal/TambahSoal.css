@@ -4,17 +4,10 @@
   width: 45rem;
   flex-direction: column;
   margin: auto;
-  margin-top: 8rem;
+  margin-top: 3rem;
   background: #ffffff;
-  box-shadow: 3px 3px 2px #dde0e2;
-  border: 1px solid #dde0e2;
-}
-
-.question-app {
-  margin-left: 2rem;
-  margin-bottom: 2rem;
-  width: 100%;
-  height: 100%;
+  /* box-shadow: 3px 3px 2px #dde0e2;
+  border: 1px solid #dde0e2; */
 }
 
 .form-question p {

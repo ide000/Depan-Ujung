@@ -1,89 +1,68 @@
 import React from 'react';
-import './SignIn.css';
-import {Form} from 'reactstrap';
+import {ValidationForm, TextInput} from 'react-bootstrap4-form-validation';
 import {Link} from 'react-router-dom';
-import validate from '../Form/FormValidation';
-import useForm from '../Form/UseForm';
+import './SignIn.css';
 
-const SignIn = () => {
-  const {values, errors, handleChange, handleSubmit} = useForm (
-    login,
-    validate
-  );
-  function login () {
-    console.log (values);
-  }
-
-  return (
-    <div className="login-app">
-      <Form className="login-form">
-        <div className="title">
-          <p className="p1">TAKALAR</p>
-          <p className="p2">SEHAT</p>
+class SignIn extends React.Component {
+  render () {
+    return (
+      <ValidationForm
+        onSubmit={(e, formData, inputs) => {
+          e.preventDefault ();
+          console.log (e, formData, inputs);
+          this.props.history.push ('/Dashboard');
+        }}
+      >
+        <div className="login-app">
+          <div className="login-form">
+            <div className="title">
+              <p id="first">TAKALAR</p>
+              <p>SEHAT</p>
+            </div>
+            <div className="form-group-login">
+              <div className="username">
+                <TextInput
+                  name="email"
+                  id="email"
+                  type="email"
+                  placeholder="Username"
+                  successMessage="Looks good!"
+                  required
+                />
+              </div>
+              <div className="password">
+                <TextInput
+                  name="password"
+                  id="password"
+                  type="pass"
+                  placeholder="Password"
+                  minLength="4"
+                  maxLength="8"
+                  errorMessage={{
+                    minLength: 'Minimum {minLength} characters is required',
+                    pattern: 'Your lastname is not corgi!',
+                  }}
+                />
+              </div>
+              <div className="forget-password">
+                <p>Lupa kata sandi ?</p>
+              </div>
+              <div className="login">
+                <button className="btn-primary">Log In</button>
+              </div>
+              <div className="to-regis">
+                <Link to="/">
+                  <p>
+                    Belum memiliki akun ? Sign Up
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <form onSubmit={handleSubmit} noValidate className="form-group-login">
-
-          <div className="username">
-            <div className="control">
-              <input
-                autoComplete="off"
-                className={`input ${errors.email && 'is-danger'}`}
-                type="email"
-                name="email"
-                placeholder="Alamat Email"
-                onChange={handleChange}
-                value={values.email || ''}
-                required
-              />
-            </div>
-            {errors.email && <p className="help is-danger">{errors.email}</p>}
-          </div>
-
-          <div className="password">
-            <div className="control">
-              <input
-                className={`input ${errors.password && 'is-danger'}`}
-                type="password"
-                name="password"
-                placeholder="Password"
-                onChange={handleChange}
-                value={values.password || ''}
-                required
-              />
-            </div>
-            {errors.password &&
-              <p className="help is-danger">{errors.password}</p>}
-          </div>
-
-          <div className="text">
-            <div className="lupa-sandi">
-              <p>Lupa kata sandi ?</p>
-            </div>
-            <div className="login">
-              <Link to="/Dashboard">
-                <button
-                  type="submit"
-                  className="button is-block is-info is-fullwidth"
-                >
-                  Login
-                </button>
-              </Link>
-            </div>
-            <div className="regis">
-              <Link to="/">
-                <p>
-                  Belum memiliki akun ? Sign Up
-                </p>
-              </Link>
-            </div>
-
-          </div>
-        </form>
-
-      </Form>
-    </div>
-  );
-};
+      </ValidationForm>
+    );
+  }
+}
 
 export default SignIn;

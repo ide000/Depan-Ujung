@@ -4,61 +4,15 @@ import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import {ButtonToolbar, Button} from 'react-bootstrap';
 
 class User extends Component {
   constructor (props) {
     super (props);
     this.sweetalertfunction = this.sweetalertfunction.bind (this);
   }
-  getData () {
-    var data = [
-      {
-        id: 1,
-        name: 'Alim Agus Musalim',
-        nip: '09239838484774',
-        action: [
-          <div className="button1">
-            <div id="edit">
-              <Link to="/EditUser">
-                Edit
-              </Link>
-            </div>
-          </div>,
-          <div className="button1">
-            <div id="edit">
-              <Link to="/EditUser">
-                Edit
-              </Link>
-            </div>
-          </div>,
-        ],
-      },
-      {
-        id: 2,
-        name: 'Muhammad Bambang',
-        nip: '38737486782883',
-        action: [
-          <div className="button1">
-            <div id="edit">
-              <Link to="/EditUser">
-                Edit
-              </Link>
-            </div>
-          </div>,
-          <div className="button1">
-            <div id="edit">
-              <Link to="/EditUser">
-                Edit
-              </Link>
-            </div>
-          </div>,
-        ],
-      },
-    ];
-    return data;
-  }
-
   sweetalertfunction () {
     console.log ('button clicks');
     Swal.fire ({
@@ -74,6 +28,32 @@ class User extends Component {
         Swal.fire ('Dihapus!', 'Data Anda telah dihapus.', 'success');
       }
     });
+  }
+
+  onMove (e, props) {
+    e.preventDefault ();
+    this.props.history.push ('/EditUser');
+  }
+  buttonFormatter (cell, row) {
+    return '<button id="edit2">Edit</button><button id="delete2"  onClick={sweetalertfunction}>Delete</button>';
+  }
+
+  getData () {
+    var data = [
+      {
+        id: 1,
+        name: 'Alim Agus Muslim',
+        nip: '0921345762985',
+        action: this.buttonFormatter (),
+      },
+      {
+        id: 2,
+        name: 'Muhammad Bambang',
+        nip: '0921347877986',
+        action: this.buttonFormatter (),
+      },
+    ];
+    return data;
   }
   render () {
     const customTotal = (from, to, size) => (
@@ -110,14 +90,13 @@ class User extends Component {
         },
       ],
     };
-
     return (
-      <div className="pertanyaan-app">
+      <div className="user-app">
         <div className="call-navbar">
           <Navbar />
-          <Sidebar pageWrapId={'question-wrap'} outerContainerId={'App'} />
+          <Sidebar pageWrapId={'user-wrap'} outerContainerId={'App'} />
         </div>
-        <div id="question-wrap">
+        <div id="user-wrap">
           <div className="tabel-app">
             <BootstrapTable
               data={this.getData ()}
@@ -137,7 +116,7 @@ class User extends Component {
                 dataField="name"
                 dataAlign="center"
                 headerAlign="center"
-                width="20rem"
+                width="10rem"
               >
                 Nama
               </TableHeaderColumn>
@@ -145,7 +124,7 @@ class User extends Component {
                 dataField="nip"
                 dataAlign="center"
                 headerAlign="center"
-                width="20rem"
+                width="10rem"
               >
                 NIP
               </TableHeaderColumn>
@@ -153,7 +132,8 @@ class User extends Component {
                 dataField="action"
                 ataAlign="center"
                 headerAlign="center"
-                width="10rem"
+                width="8rem"
+                dataFormat={this.buttonFormatter}
               >
                 Aksi
               </TableHeaderColumn>
@@ -169,4 +149,4 @@ class User extends Component {
     );
   }
 }
-export default User;
+export default withRouter (User);

@@ -5,75 +5,38 @@ import Sidebar from '../Sidebar/Sidebar';
 import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import swal from 'sweetalert2';
+import SweetAlert from 'sweetalert2-react';
 
 class Pertanyaan extends Component {
   constructor (props) {
     super (props);
-    this.sweetalertfunction = this.sweetalertfunction.bind (this);
-    this.isOpen = this.props.isOpen;
+    this.state = {
+      show: false,
+    };
   }
+  // const SweetAlert = withSwalInstance(swal);
 
+  buttonFormatter (cell, row) {
+    // onClick={() => this.setState({ show: true })}
+    return '<Button id=edit1>Edit</Button> <Button id=delete1>Delete</Button>';
+  }
   getData () {
     var data = [
       {
         id: 1,
         question: 'Apakah ada anggota keluarga yang mengalami gangguan jiwa ?',
-        action: [
-          <div className="button1">
-            <div id="edit">
-              <Link to="/EditUser">
-                Edit
-              </Link>
-            </div>
-          </div>,
-          <div className="button1">
-            <div id="edit">
-              <Link to="/EditUser">
-                Edit
-              </Link>
-            </div>
-          </div>,
-        ],
+        action: this.buttonFormatter (),
       },
       {
         id: 2,
         question: 'Jika No. 2 dan atau No. 3 ya, berapa anggota keluarga ?',
-        action: [
-          <div className="button1">
-            <div id="edit">
-              <Link to="/EditUser">
-                Edit
-              </Link>
-            </div>
-          </div>,
-          <div className="button1">
-            <div id="edit">
-              <Link to="/EditUser">
-                Edit
-              </Link>
-            </div>
-          </div>,
-        ],
+        action: this.buttonFormatter (),
       },
     ];
     return data;
   }
-  sweetalertfunction () {
-    console.log ('button clicks');
-    Swal.fire ({
-      title: 'Apakah Anda yakin?',
-      text: 'Anda tidak dapat mengembalikan data yang telah dihapus!',
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Ya',
-    }).then (result => {
-      if (result.value) {
-        Swal.fire ('Dihapus!', 'Data Anda telah dihapus.', 'success');
-      }
-    });
-  }
+
   render () {
     const customTotal = (from, to, size) => (
       <span className="react-bootstrap-table-pagination-total">
@@ -109,7 +72,6 @@ class Pertanyaan extends Component {
         },
       ],
     };
-
     return (
       <div className="pertanyaan-app">
         <div className="call-navbar">
@@ -117,17 +79,15 @@ class Pertanyaan extends Component {
           <Sidebar pageWrapId={'question-wrap'} outerContainerId={'App'} />
         </div>
         <div id="question-wrap">
-          <div
-            className="tabel-app"
-            style={
+          <div className="tabel-app">
+            {/* style={
               this.props.isOpen === true
                 ? {
                     transform: 'translate3d(150px,0px,0px !important',
                     transition: 'all 0.5 ease !important',
                   }
                 : {marginLeft: 'auto'}
-            }
-          >
+            } */}
             <BootstrapTable
               data={this.getData ()}
               pagination={true}
@@ -152,13 +112,20 @@ class Pertanyaan extends Component {
               </TableHeaderColumn>
               <TableHeaderColumn
                 dataField="action"
-                ataAlign="left"
+                dataAlign="left"
                 headerAlign="center"
-                width="15rem"
+                width="10rem"
+                dataFormat={this.buttonFormatter}
               >
                 Aksi
               </TableHeaderColumn>
             </BootstrapTable>
+            <SweetAlert
+              show={this.state.show}
+              title="Demo"
+              text="SweetAlert in React"
+              onConfirm={() => this.setState ({show: false})}
+            />
             <div className="tambahSoal">
               <Link to="/TambahSoal">
                 <button className="TambahSoal">+ Tambah</button>

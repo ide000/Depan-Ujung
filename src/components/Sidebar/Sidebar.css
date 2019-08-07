@@ -7,7 +7,6 @@
     color: #ffffff;
 }
 
-/* menu sidebar */
 .menu-item {
     font-size: 1.25rem;
     font-family: Arial, Helvetica, sans-serif;
@@ -51,7 +50,6 @@ a:hover {
     font-size: 1rem;
 }
 
-/* Position and sizing of burger button */
 .bm-burger-button {
     position: fixed;
     width: 36px;
@@ -60,40 +58,32 @@ a:hover {
     top: 36px;
 }
 
-/* Color/shape of burger icon bars */
 .bm-burger-bars {
     background: #373a47;
 
 }
 
-/* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
     background: #ffffff;
 }
 
-/* Position, color and sizing of clickable cross button */
 .bm-cross-button {
     height: 24px;
     width: 24px;
     margin-top: -5rem;
 }
 
-/* Color/shape of close button cross */
 .bm-cross {
     background: black;
 }
 
-/*
-    Sidebar wrapper styles
-    Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-    */
+
 .bm-menu-wrap {
     position: fixed;
     height: 100%;
     width: 19rem !important;
 }
 
-/* General sidebar styles */
 .bm-menu {
     background: #1CAAC5;
     padding: 2.5em 1.5em 0;
@@ -101,19 +91,12 @@ a:hover {
     margin-top: -5.75rem;
 }
 
-/* Morph shape necessary with bubble or elastic */
-/* .bm-morph-shape {
-    fill: #1CAAC5;
-} */
-
-/* Wrapper for item list */
 .bm-item-list {
     /* color: #b8b7ad; */
     padding: 0.8em;
     background-color: #1CAAC5;
 }
 
-/* Styling of overlay */
 .bm-overlay {
     position: fixed;
     z-index: 1000;

@@ -11,7 +11,7 @@
     background-size: cover;
 }
 
-.regis-form {
+.form-regis {
     background-image: url(./background.png);
     background-color: #005083;
     width: 24rem;
@@ -21,13 +21,15 @@
     margin: auto;
 }
 
-.sign-up {
-    margin-left: 2rem;
+.form-group-regis {
+    width: 15.5rem;
+    margin: auto;
+    margin-top: 5.5rem;
 }
 
 .title {
     font-weight: bold;
-    margin-left: 4.25rem;
+    margin-left: 4.50rem;
     padding-top: 7rem;
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
@@ -36,27 +38,24 @@
     margin-bottom: 0.5rem;
 }
 
-.form-group-regis {
-    margin-top: 3rem;
-    text-align: left;
-    margin-left: 5rem;
+.title #second {
+    margin-bottom: -0.5rem;
 }
 
-.form-group-regis input {
-    width: 15.5rem;
+
+#fullName.form-control,
+#email.form-control,
+#password.form-control {
     height: 3rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    color: #0C3265;
-    margin-bottom: -1rem;
-    margin-left: -0.5rem;
 }
 
+#fullName.form-control {
+    margin-bottom: 0.25rem;
+}
 
-.button-regis {
-    margin-top: 5rem;
-    margin-left: -1.5rem;
+.regis button {
+    margin-top: 4.5rem;
+    margin-left: -0.25rem;
     width: 15.6rem;
     height: 3rem;
     border: none;
@@ -66,17 +65,15 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.login p {
+.to-login p {
     color: #ffffff;
-    margin-left: -8rem;
+    margin-left: -6.25rem;
     font-size: 0.75rem;
     margin-top: 0.75rem;
-
 }
 
 input[type=email],
-[type=password],
-[type=email],
-[type=username] {
-    padding: 6px;
+input [type=password] {
+    padding: 6px 12px;
+    margin: 0px 0px 4px;
 }
