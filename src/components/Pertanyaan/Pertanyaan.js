@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import './Pertanyaan.css';
 import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
-import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
+import {Button} from 'reactstrap';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import swal from 'sweetalert2';
 import SweetAlert from 'sweetalert2-react';
 
 class Pertanyaan extends Component {
@@ -14,12 +13,25 @@ class Pertanyaan extends Component {
     this.state = {
       show: false,
     };
+    this.showAlert = this.showAlert.bind (this);
   }
-  // const SweetAlert = withSwalInstance(swal);
 
   buttonFormatter (cell, row) {
-    // onClick={() => this.setState({ show: true })}
-    return '<Button id=edit1>Edit</Button> <Button id=delete1>Delete</Button>';
+    return (
+      <div>
+        <Link to="/EditSoal">
+          <Button id="edit1">Edit</Button>
+        </Link>
+        <Button id="delete1" onClick={this.showAlert}>
+          Delete
+        </Button>
+      </div>
+    );
+  }
+
+  showAlert (event) {
+    this.setState ({show: true});
+    console.log ('click');
   }
   getData () {
     var data = [
@@ -74,6 +86,7 @@ class Pertanyaan extends Component {
     };
     return (
       <div className="pertanyaan-app">
+
         <div className="call-navbar">
           <Navbar />
           <Sidebar pageWrapId={'question-wrap'} outerContainerId={'App'} />
@@ -115,17 +128,11 @@ class Pertanyaan extends Component {
                 dataAlign="left"
                 headerAlign="center"
                 width="10rem"
-                dataFormat={this.buttonFormatter}
+                dataFormat={this.buttonFormatter.bind (this)}
               >
                 Aksi
               </TableHeaderColumn>
             </BootstrapTable>
-            <SweetAlert
-              show={this.state.show}
-              title="Demo"
-              text="SweetAlert in React"
-              onConfirm={() => this.setState ({show: false})}
-            />
             <div className="tambahSoal">
               <Link to="/TambahSoal">
                 <button className="TambahSoal">+ Tambah</button>
@@ -133,6 +140,26 @@ class Pertanyaan extends Component {
             </div>
           </div>
         </div>
+        <SweetAlert
+          show={this.state.show}
+          type="warning"
+          confirmButtonText="Hapus"
+          title="Apakah Anda Yakin?"
+          text="Anda tidak dapat mengembalikan data yang telah dihapus!"
+          confirmButtonColor="#d33"
+          showCancelColor="#3085d6"
+          showCancelButton
+          onConfirm={() => {
+            console.log ('confirm');
+            this.setState ({show: false});
+          }}
+          onCancel={() => {
+            console.log ('cancel');
+            this.setState ({show: false});
+          }}
+          onEscapeKey={() => this.setState ({show: false})}
+          onOutsideClick={() => this.setState ({show: false})}
+        />
       </div>
     );
   }

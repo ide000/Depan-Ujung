@@ -12,6 +12,15 @@ thead {
   font-family: helvetica;
 }
 
+.swal2-popup .swal2-styled.swal2-cancel {
+  background-color: #3085d6 !important;
+  border: 0;
+  border-radius: .25em;
+  background: initial;
+  color: #fff;
+  font-size: 1.0625em;
+}
+
 tbody {
   background-color: #f1f8fc;
 }

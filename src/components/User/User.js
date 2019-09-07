@@ -2,40 +2,34 @@ import React, {Component} from 'react';
 import './User.css';
 import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
-import Swal from 'sweetalert2';
 import {Link} from 'react-router-dom';
-import {withRouter} from 'react-router-dom';
+import {Button} from 'reactstrap';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import {ButtonToolbar, Button} from 'react-bootstrap';
+import SweetAlert from 'sweetalert2-react';
 
 class User extends Component {
   constructor (props) {
     super (props);
-    this.sweetalertfunction = this.sweetalertfunction.bind (this);
-  }
-  sweetalertfunction () {
-    console.log ('button clicks');
-    Swal.fire ({
-      title: 'Apakah Anda yakin?',
-      text: 'Anda tidak dapat mengembalikan data yang telah dihapus!',
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Ya',
-    }).then (result => {
-      if (result.value) {
-        Swal.fire ('Dihapus!', 'Data Anda telah dihapus.', 'success');
-      }
-    });
-  }
-
-  onMove (e, props) {
-    e.preventDefault ();
-    this.props.history.push ('/EditUser');
+    this.state = {
+      show: false,
+    };
+    this.showAlert = this.showAlert.bind (this);
   }
   buttonFormatter (cell, row) {
-    return '<button id="edit2">Edit</button><button id="delete2"  onClick={sweetalertfunction}>Delete</button>';
+    return (
+      <div>
+        <Link to="/EditUser">
+          <Button id="edit2">Edit</Button>
+        </Link>
+        <Button id="delete2" onClick={this.showAlert}>
+          Delete
+        </Button>
+      </div>
+    );
+  }
+  showAlert (event) {
+    this.setState ({show: true});
+    console.log ('click');
   }
 
   getData () {
@@ -145,8 +139,28 @@ class User extends Component {
             </div>
           </div>
         </div>
+        <SweetAlert
+          show={this.state.show}
+          type="warning"
+          confirmButtonText="Hapus"
+          title="Apakah Anda Yakin?"
+          text="Anda tidak dapat mengembalikan data yang telah dihapus!"
+          confirmButtonColor="#d33"
+          showCancelColor="#3085d6"
+          showCancelButton
+          onConfirm={() => {
+            console.log ('confirm');
+            this.setState ({show: false});
+          }}
+          onCancel={() => {
+            console.log ('cancel');
+            this.setState ({show: false});
+          }}
+          onEscapeKey={() => this.setState ({show: false})}
+          onOutsideClick={() => this.setState ({show: false})}
+        />
       </div>
     );
   }
 }
-export default withRouter (User);
+export default User;
