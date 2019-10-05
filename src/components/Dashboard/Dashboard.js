@@ -10,12 +10,6 @@ const Dashboard = () => {
         <Navbar />
         <Sidebar pageWrapId={'page-wrap'} outerContainerId={'App'} />
       </div>
-      <div className="welcome-text">
-        <div id="page-wrap" className="welcome">
-          <p>WELCOME</p>
-          <p>ADMIN</p>
-        </div>
-      </div>
     </div>
   );
 };

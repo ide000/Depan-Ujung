@@ -1,5 +1,5 @@
 import React from 'react';
-import {push as Menu} from 'react-burger-menu';
+import {slide as Menu} from 'react-burger-menu';
 import './Sidebar.css';
 import {Link} from 'react-router-dom';
 
@@ -7,38 +7,25 @@ export default Sidebar => {
   return (
     <Menu {...Sidebar} isOpen={true}>
       <div className="title-sidebar">
-        <p>TAKALAR</p>
-        <p>SEHAT</p>
+        <h1>ADMIN DASHBOARD</h1>
       </div>
-      <Link to="/Dashboard">
-        <div id="home" className="menu-item">Dashboard</div>
+      <div className="daftar-sidebar">
+      <Link to="../Siswa/Siswa.js">
+        <div id="about" className="menu-item">Daftar Siswa</div>
       </Link>
-      <Link to="/Pertanyaan">
-        <div id="about" className="menu-item">Pertanyaan</div>
-        <div className="list">
-          <ul>
-            Gangguan Jiwa Berat
-            <li>Soal No 1</li>
-            <li>Soal No 2</li>
-            <li>Soal No 3</li>
-          </ul>
-          <ul>
-            Disabilitas (umur > 15 tahun)
-            <li>Soal No 1</li>
-            <li>Soal No 2</li>
-            <li>Soal No 3</li>
-          </ul>
-          <ul>
-            Kesehatan Lingkungan
-          </ul>
-        </div>
+      <Link to="../Tutor/Tutor.js">
+        <div id="contact" className="menu-item">Daftar Tutor</div>
       </Link>
-      <Link to="/User">
-        <div id="contact" className="menu-item">User</div>
+      <Link to="../Jadwal/Jadwal.js">
+        <div id="contact" className="menu-item">Jadwal Les</div>
       </Link>
-      <Link to="/SignIn">
+      <Link to="../Handbooks/Handbooks.js">
+        <div id="contact" className="menu-item">Handbooks</div>
+      </Link>
+      <Link to="#">
         <div id="log-out" className="log-out">Log Out</div>
       </Link>
+      </div>
     </Menu>
   );
 };

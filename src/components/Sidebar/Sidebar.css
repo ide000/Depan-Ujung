@@ -1,22 +1,21 @@
-.title-sidebar {
-    font-size: 2.5rem;
+.title-sidebar h1 {
+    font-size: 2rem;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    padding-left: 0.5rem;
     color: #ffffff;
 }
 
 .menu-item {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
     list-style: none;
     justify-content: center;
     margin-right: 1rem;
     display: flex;
+    text-align: left;
+    margin-top: 2rem;
     flex-direction: column;
-    margin-top: 4rem;
     color: #ffffff;
     background-color: #1CAAC5;
 }
@@ -41,13 +40,13 @@ a:hover {
     margin-left: 2rem;
 }
 
-.log-out {
-    margin-top: 3rem;
+.daftar-sidebar .log-out {
     font-family: Arial, Helvetica, sans-serif;
     list-style: none;
-    margin-top: 5rem;
+    margin-top: 15rem !important;
     color: #ffffff;
     font-size: 1rem;
+    text-align: left;
 }
 
 .bm-burger-button {
